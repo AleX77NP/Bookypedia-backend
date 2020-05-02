@@ -135,16 +135,16 @@ async (req, res) => {
        user: {
          id: user.id
        }
-     }
+     };
      jwt.sign(
        payload,
-       'randomString', {
+       'secret', {
          expiresIn: '365d'
        },
        (err, token) => {
          if(err) throw err;
          res.status(200).json({
-           token,user: {
+          token,user: {
           name: user.name,
           surname: user.surname,
           email : user.email,
