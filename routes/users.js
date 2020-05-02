@@ -139,7 +139,7 @@ async (req, res) => {
      jwt.sign(
        payload,
        'randomString', {
-         expiresIn: 10000
+         expiresIn: '365d'
        },
        (err, token) => {
          if(err) throw err;
@@ -229,7 +229,7 @@ async(req, res) => {
     jwt.sign(
       payload,'secret',
       {
-        expiresIn: 3600
+        expiresIn: '365d'
       },
       (err, token) => {
         if(err) throw err;
